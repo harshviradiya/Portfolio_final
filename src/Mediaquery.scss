@@ -1,0 +1,178 @@
+@media (max-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+    .MainHeader {
+        nav {
+            position: relative;
+            .MenuList {
+                display: none;
+            }
+            .logo {
+                width: 50%;
+            }
+            .smMenuList {
+                width: 50%;
+                display: block;
+                text-align: end;
+                button {
+                    background: none;
+                    border: none;
+                    font-size: 1.3rem;
+                    color: var(--bg-perpule);
+                }
+                .Hide {
+                    display: none;
+                }
+                .Show {
+                    display: block;
+                    position: absolute;
+                    width: 95%;
+                    left: 2.5%;
+                    top: 100%;
+                    text-align: center;
+                    background: #6f34fe;
+                    z-index: 11;
+                    border-radius: 1rem;
+                    li {
+                        padding: 0.8rem;
+                        font-size: 1.1rem;
+                        color: #fff;
+                        transition: all 0.1s;
+                        cursor: pointer;
+                        &:hover {
+                            letter-spacing: 0.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .HomeBody {
+        .MainTitle {
+            text-align: center;
+        }
+        section {
+            .MainDetails {
+                .right {
+                    width: 100%;
+                    text-align: center;
+                }
+                .new_right {
+                    width: 100%;
+                    text-align: center;
+                }
+                .detailBody {
+                    .topic {
+                        .topicDiv {
+                            width: 25%;
+                        }
+                    }
+                }
+                .userDetails {
+                    width: 100%;
+                    text-align: center;
+                }
+                .userImages {
+                    display: none;
+                }
+                .selectBox,
+                .selectedDetails {
+                    width: 100%;
+                    margin: 1rem 0;
+                }
+            }
+            .educationdiv {
+                display: flex;
+                flex-direction: column;
+            }
+            .experincediv {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            .skills {
+                .skillBg {
+                    width: 100%;
+                }
+            }
+            .projectt {
+                .projects {
+                    width: 60%;
+                    margin: 3rem auto;
+                    &::after {
+                        height: 100%;
+                    }
+                }
+
+                .clones {
+                    width: 80%;
+                    margin: 3rem auto;
+                    &::after {
+                        height: 100%;
+                    }
+                }
+            }
+            .touch-row {
+                .address,
+                .contact-me {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 95%;
+    }
+    .HomeBody {
+        section {
+            .project_clones {
+                display: block;
+            }
+            .project-box {
+                .projects {
+                    width: 80%;
+                }
+                .clones {
+                    width: 80%;
+                }
+            }
+            .MainDetails {
+                .detailBody {
+                    .topic {
+                        .topicDiv {
+                            width: 47%;
+                        }
+                    }
+                }
+            }
+            .touch-row {
+                .address {
+                    .address-box {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
