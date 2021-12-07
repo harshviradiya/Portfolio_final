@@ -45,7 +45,7 @@ export const Home = () => {
                   <span>Product Designer</span>
                 </div>
                 <h2>
-                  <span>H</span>asrh <span>V</span>iradiya
+                  <span>H</span>arsh <span>V</span>iradiya
                 </h2>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
@@ -59,7 +59,7 @@ export const Home = () => {
                 </div>
               </div>
               <div className="userImages">
-                <img src="../Assest/bgshape/Capture.png" alt="" />
+                <img src="./Assest/bgshape/Capture.png" alt="" />
               </div>
             </div>
           </div>
@@ -72,8 +72,6 @@ export const Home = () => {
             </div>
             <div className="MainDetails educationdiv">
               <div className="selectBox">
-
-
                 {/* <Link to="educationscroll" spy={true} smooth={true}> */}
                 <div className="clgBox" onClick={handleeducation1}>
                   <img src="../Assest/collagelogo/lambton.png" alt="" />
@@ -95,7 +93,7 @@ export const Home = () => {
                   <div className="detailHeader">
                     <img src="../Assest/collagelogo/lambton.png" alt="" />
                     <div>
-                      <h3>" Lambton College "</h3>
+                      <h3> Lambton Collage </h3>
                       <span>
                         <sup>Pursuing</sup>(Sept 2020 - April 2022)
                       </span>
@@ -133,7 +131,7 @@ export const Home = () => {
                   <div className="detailHeader">
                     <img src="../Assest/collagelogo/GNU.png" alt="" />
                     <div>
-                      <h3>" Ganpat University "</h3>
+                      <h3> Ganpat University </h3>
                       <span>
                         (July 2015 - May 2019)
                       </span>
@@ -173,15 +171,12 @@ export const Home = () => {
                     </div>
                   </div>
                 </div>
-
               </div>
-
-
             </div>
           </div>
         </section>
 
-        <section id="Experince">
+        {/* <section id="Experince">
           <div className="container">
             <div className="MainTitle">
               <span>my skills</span>
@@ -241,12 +236,184 @@ export const Home = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section id="Skills">
+        <section id="skills">
           <div className="container">
             <div className="MainTitle">
-              <span>experince</span>
+              <span>my skills</span>
+            </div>
+            <div className="skills">
+              {/* <span className="heading">My Skills</span> */}
+
+              <div className="skillscircle">
+
+
+                <div class="card">
+                  <div class="percent">
+                    <svg>
+                      <circle cx="70" cy="70" r="70"></circle>
+                      <circle cx="70" cy="70" r="70"></circle>
+                    </svg>
+                    <div class="number">
+                      <h2>90<span>%</span></h2>
+                    </div>
+                  </div>
+                  <h2 class="text">Html</h2>
+                </div>
+
+                <div class="card">
+                  <div class="percent javascipt">
+                    <svg>
+                      <circle cx="70" cy="70" r="70"></circle>
+                      <circle cx="70" cy="70" r="70"></circle>
+                    </svg>
+                    <div class="number">
+                      <h2>90<span>%</span></h2>
+                    </div>
+                  </div>
+                  <h2 class="text">Css</h2>
+                </div>
+
+
+                <div class="card">
+                  <div class="percent">
+                    <svg>
+                      <circle cx="70" cy="70" r="70"></circle>
+                      <circle cx="70" cy="70" r="70"></circle>
+                    </svg>
+                    <div class="number">
+                      <h2>90<span>%</span></h2>
+                    </div>
+                  </div>
+                  <h2 class="text">Database</h2>
+                </div>
+
+
+                <div class="card">
+                  <div class="percent">
+                    <svg>
+                      <circle cx="70" cy="70" r="70"></circle>
+                      <circle cx="70" cy="70" r="70"></circle>
+                    </svg>
+                    <div class="number">
+                      <h2>90<span>%</span></h2>
+                    </div>
+                  </div>
+                  <h2 class="text">C</h2>
+                </div>
+
+
+
+                <div class="card">
+                  <div class="percent">
+                    <svg>
+                      <circle cx="70" cy="70" r="70"></circle>
+                      <circle cx="70" cy="70" r="70"></circle>
+                    </svg>
+                    <div class="number">
+                      <h2>85<span>%</span></h2>
+                    </div>
+                  </div>
+                  <h2 class="text">Java</h2>
+                </div>
+
+
+
+                <div class="card">
+                  <div class="percent">
+                    <svg>
+                      <circle cx="70" cy="70" r="70"></circle>
+                      <circle cx="70" cy="70" r="70"></circle>
+                    </svg>
+                    <div class="number">
+                      <h2>85<span>%</span></h2>
+                    </div>
+                  </div>
+                  <h2 class="text">Asp.Net</h2>
+                </div>
+
+
+                <div class="card">
+                  <div class="percent">
+                    <svg>
+                      <circle cx="70" cy="70" r="70"></circle>
+                      <circle cx="70" cy="70" r="70"></circle>
+                    </svg>
+                    <div class="number">
+                      <h2>80<span>%</span></h2>
+                    </div>
+                  </div>
+                  <h2 class="text">JAVA(J2EE)</h2>
+                </div>
+
+
+                <div class="card">
+                  <div class="percent">
+                    <svg>
+                      <circle cx="70" cy="70" r="70"></circle>
+                      <circle cx="70" cy="70" r="70"></circle>
+                    </svg>
+                    <div class="number">
+                      <h2>80<span>%</span></h2>
+                    </div>
+                  </div>
+                  <h2 class="text">JavaScript</h2>
+                </div>
+
+
+                <div class="card">
+                  <div class="percent">
+                    <svg>
+                      <circle cx="70" cy="70" r="70"></circle>
+                      <circle cx="70" cy="70" r="70"></circle>
+                    </svg>
+                    <div class="number">
+                      <h2>80<span>%</span></h2>
+                    </div>
+                  </div>
+                  <h2 class="text">Angular JS</h2>
+                </div>
+
+
+                <div class="card">
+                  <div class="percent">
+                    <svg>
+                      <circle cx="70" cy="70" r="70"></circle>
+                      <circle cx="70" cy="70" r="70"></circle>
+                    </svg>
+                    <div class="number">
+                      <h2>80<span>%</span></h2>
+                    </div>
+                  </div>
+                  <h2 class="text">Node Js</h2>
+                </div>
+
+                <div class="card">
+                  <div class="percent">
+                    <svg>
+                      <circle cx="70" cy="70" r="70"></circle>
+                      <circle cx="70" cy="70" r="70"></circle>
+                    </svg>
+                    <div class="number">
+                      <h2>80<span>%</span></h2>
+                    </div>
+                  </div>
+                  <h2 class="text">React Js</h2>
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <section id="experince">
+          <div className="container">
+            <div className="MainTitle">
+              <span>experiance</span>
             </div>
             <div className="MainDetails experincediv">
 
@@ -470,19 +637,29 @@ export const Home = () => {
                 <div className="address-box">
                   <ul>
                     <li>
-                      <i class="fab fa-twitter"></i>
+                      <a href="https://twitter.com/VJemish">
+                        <i class="fab fa-twitter"></i>
+                      </a>
                     </li>
                     <li>
-                      <i class="fab fa-facebook-f"></i>
+                      <a href="https://www.facebook.com/jemish.viradiya.54/">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
                     </li>
                     <li>
-                      <i class="fab fa-github"></i>
+                      <a href="https://github.com/JemishViradiya">
+                        <i class="fab fa-github"></i>
+                      </a>
                     </li>
                     <li>
-                      <i class="fab fa-instagram"></i>
+                      <a href="https://www.instagram.com/jemishviradiya9/">
+                        <i class="fab fa-instagram"></i>
+                      </a>
                     </li>
                     <li>
-                      <i class="fab fa-linkedin-in"></i>
+                      <a href="https://www.linkedin.com/in/jemish-viradiya-63aa2a146/">
+                        <i class="fab fa-linkedin-in"></i>
+                      </a>
                     </li>
                   </ul>
                 </div>

@@ -67,6 +67,7 @@ h5 {
 section {
   position: relative;
   box-shadow: var(--bg-card-shadow);
+  /* padding: 100px 0; */
 }
 
 .container {
