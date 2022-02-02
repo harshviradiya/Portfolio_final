@@ -78,6 +78,7 @@
                 .right {
                     width: 100%;
                     text-align: center;
+                    justify-content: center;
                     .detailHeader {
                         justify-content: center;
                         h3 {
@@ -110,7 +111,10 @@
                 .selectBox,
                 .selectedDetails {
                     width: 100%;
-                    margin: 1rem 0;
+                    margin: 2rem 0;
+                }
+                .selectBox1 {
+                    width: 65%;
                 }
             }
             .educationdiv {
@@ -220,6 +224,7 @@
                 .address,
                 .contact-me {
                     width: 100%;
+                    justify-content: center;
                 }
             }
         }
