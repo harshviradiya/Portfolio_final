@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
+import { saveAs } from "file-saver"
 import "./Home.scss";
 import { Link } from "react-scroll";
 
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 export const Home = () => {
 
   const [div, setdiv] = useState(true);
+
+  const myref = useRef(null);
+  const contactme = () => scrollToRef(myref)
+
+
   const handleeducation1 = () => {
     setdiv(true)
   }
@@ -14,25 +21,33 @@ export const Home = () => {
     setdiv(false)
   }
 
-  const [exp, setexp] = useState(true);
-  const handlecompony1 = () => {
-    setexp(true)
-  }
-  const handlecompony2 = () => {
-    setexp(false)
-  }
 
+  const saveFile = () => {
+
+    saveAs(
+      "http://localhost:3000/Assest/Resume.pdf",
+
+    );
+  };
 
   const [isActive, setActive] = useState(false);
   const [projects, setprojects] = useState(true);
   const handleprojects = () => {
-    setprojects(false)
+    setprojects(true)
     setActive(!isActive);
   }
   const handleclones = () => {
-    setprojects(true)
+    setprojects(false)
     setActive(!isActive)
   }
+
+
+  const handlecompony = (val) => {
+    setactivecompony(val)
+  }
+
+  const [activecompony, setactivecompony] = useState("getway");
+
   return (
     <div className="Main">
       <Header />
@@ -42,24 +57,25 @@ export const Home = () => {
             <div className="MainDetails">
               <div className="userDetails">
                 <div className="MainTitle">
-                  <span>Product Designer</span>
+                  <span>Software Developer</span>
                 </div>
                 <h2>
-                  <span>H</span>arsh <span>V</span>iradiya
+                  <span>J</span>emish <span>V</span>iradiya
                 </h2>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
-                  sed nam sint deleniti quia distinctio mollitia magni saepe
-                  aperiam hic, autem quam dolor repudiandae perferendis fugiat
-                  excepturi! Quae, consequuntur ex!
+                  A Software Developer with enhanced intellectual growth, knowledge,
+                  and I provide the best of my abilities and technical skills to deliver
+                  diverse projects in a complex environment and improve the organization's
+                  capacities to work and contribute to growth and development.
                 </p>
                 <div className="contactBtns">
-                  <button className="perpuleBtn">Contact Me</button>
-                  <button className="outlineBtn">Download CV</button>
+                  <button className="perpuleBtn" onClick={contactme}>Contact Me</button>
+                  <Link src="./file/resume.pdf"><button className="outlineBtn" onClick={saveFile}> Download CV</button></Link>
+                  {/* <a className="outlineBtn" href="./Assest/Jemish Viradiya-Resume.pdf">Download CV</a> */}
                 </div>
               </div>
               <div className="userImages">
-                <img src="./Assest/bgshape/Capture.png" alt="" />
+                <img src="./myprofile.png" alt="" />
               </div>
             </div>
           </div>
@@ -71,7 +87,7 @@ export const Home = () => {
               <span>EDUCATION</span>
             </div>
             <div className="MainDetails educationdiv">
-              <div className="selectBox">
+              <div className="selectBox selectBox1">
                 {/* <Link to="educationscroll" spy={true} smooth={true}> */}
                 <div className="clgBox" onClick={handleeducation1}>
                   <img src="../Assest/collagelogo/lambton.png" alt="" />
@@ -95,7 +111,7 @@ export const Home = () => {
                     <div>
                       <h3> Lambton Collage </h3>
                       <span>
-                        <sup>Pursuing</sup>(Sept 2020 - April 2022)
+                        (Sept 2020 - April 2022)
                       </span>
                     </div>
                   </div>
@@ -418,7 +434,7 @@ export const Home = () => {
             <div className="MainDetails experincediv">
 
               <div className="new_right" id="compony_details">
-                <div className="selectedDetails" style={{ display: exp ? 'block' : 'none' }}>
+                <div className="selectedDetails" style={{ display: activecompony === "getway" ? 'block' : 'none' }}>
                   <div className="detailHeader">
                     <img src="../Assest/componylogo/getway.jpg" alt="" />
                     <div>
@@ -433,7 +449,24 @@ export const Home = () => {
                     </p>
                   </div>
                 </div>
-                <div className="selectedDetails" style={{ display: exp ? 'none' : 'block' }}>
+
+                <div className="selectedDetails" style={{ display: activecompony === "blackBerry" ? 'block' : 'none' }}>
+                  <div className="detailHeader">
+                    <img src="../Assest/componylogo/blackberry.png" alt="" />
+                    <div>
+                      <h3>Blackberry Technologies</h3>
+                      <span>(ontario, canada)</span>
+                    </div>
+                  </div>
+                  <div className="detailBody">
+                    <h3>Software Developer (Jan 2022 - current)</h3>
+                    <p>
+                      I wroked around one year as a software developer at Blackberry. Technologies back in canada, working on critical projects for their clients. I had the opportunity to develop website named AutoDap in agile methodology using different technologies like Angular JS, Node JS, including CSS/CSS3 and HTML5.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="selectedDetails" style={{ display: activecompony === "brainBeam" ? 'block' : 'none' }}>
 
                   <div className="detailHeader">
                     <img src="../Assest/componylogo/bbt.png" alt="" />
@@ -455,22 +488,34 @@ export const Home = () => {
 
 
 
-              <div className="selectBox">
+              <div className="selectBox selectBox1">
                 <div className="clgBox expBox">
                   <img src="../Assest/componylogo/getway.jpg" alt="" />
                   <h3>Gatway Techno Labs</h3>
                   <div className="contactBtns">
                     <Link to="compony_details" spy={true} smooth={true}>
-                      <button className="perpuleBtn" onClick={handlecompony1}>View Detail</button>
+                      <button className="perpuleBtn" onClick={() => handlecompony("getway")}>View Detail</button>
                     </Link>
                   </div>
                 </div>
+
+
+                <div className="clgBox expBox" >
+                  <img src="../Assest/componylogo/blackberry.png" alt="" />
+                  <h3>Blackberry Technologies</h3>
+                  <div className="contactBtns">
+                    <Link to="compony_details" spy={true} smooth={true}>
+                      <button className="perpuleBtn" onClick={() => handlecompony("blackBerry")}>View Detail</button>
+                    </Link>
+                  </div>
+                </div>
+
                 <div className="clgBox expBox" >
                   <img src="../Assest/componylogo/bbt.png" alt="" />
                   <h3>BrainyBeam Technologies</h3>
                   <div className="contactBtns">
                     <Link to="compony_details" spy={true} smooth={true}>
-                      <button className="perpuleBtn" onClick={handlecompony2}>View Detail</button>
+                      <button className="perpuleBtn" onClick={() => handlecompony("brainBeam")}>View Detail</button>
                     </Link>
                   </div>
                 </div>
@@ -484,12 +529,12 @@ export const Home = () => {
             <div className="MainTitle project_clones">
               <span>my projects</span>
               <div className="option">
-                <button className={isActive ? 'activeBtn' : null} onClick={handleprojects}>Projects</button>
-                <button className={isActive ? 'null' : 'activeBtn'} onClick={handleclones}>Clones</button>
+                <button className={isActive ? null : 'activeBtn'} onClick={handleprojects}>Projects</button>
+                <button className={isActive ? 'activeBtn' : null} onClick={handleclones}>Clones</button>
               </div>
             </div>
             <div className="projectt">
-              <div className="project-box" style={{ display: projects ? 'none' : 'flex', alignItems: 'center', justifyContent: "space-between", position: 'relative', flexWrap: 'wrap' }}>
+              <div className="project-box" style={{ display: projects ? 'flex' : 'none', alignItems: 'center', justifyContent: "space-between", position: 'relative', flexWrap: 'wrap' }}>
                 <div className="projects">
                   <figure>
                     <img src="../Assest/projects/p1.png" alt="Portfolio Item" />
@@ -584,7 +629,7 @@ export const Home = () => {
                   </figure>
                 </div>
               </div>
-              <div style={{ display: projects ? 'flex' : 'none', alignItems: "center", justifyContent: 'center', position: "relative" }} >
+              <div style={{ display: projects ? 'none' : 'flex', alignItems: "center", justifyContent: 'center', position: "relative" }} >
                 <div className="clones">
                   <figure>
                     <img src="../Assest/projects/tinder-clone.gif" alt="Portfolio Item" />
@@ -605,7 +650,7 @@ export const Home = () => {
           </div>
         </section>
 
-        <section id="Contact">
+        <section id="Contact" ref={myref}>
           <div className="container">
             <div className="MainTitle">
               <span>get in touch</span>
